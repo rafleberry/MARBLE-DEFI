@@ -26,7 +26,7 @@ export const PoolAvailableLiquidityCard = ({
   const tokenA = useTokenInfo(tokenASymbol)
   const tokenB = useTokenInfo(tokenBSymbol)
   return (
-    <StyledElementForCardLayout
+    <StyledElementForCardLayout className='dashboard-card'
       kind="wrapper"
       css={{ display: 'flex', flexDirection: 'column', rowGap: '20px' }}
     >
@@ -47,15 +47,15 @@ export const PoolAvailableLiquidityCard = ({
           )}
         </StyledTextForAmount>
       </StyledElementForCardLayout>
-      <StyledElementForCardLayout
+      <StyledElementForCardLayout className='dashboard-card'
         kind="wrapper"
-        css={{ flexDirection: 'column', alignItems: 'flex-start' }}
+        css={{ flexDirection: 'column', alignItems: 'flex-start',marginTop: '10px' }}
       >
         <>Underlying assets</>
         <StyledElementForTokens kind="wrapper">
           <StyledElementForTokens kind="element">
             <StyledImageForToken
-              as={tokenA?.logoURI ? 'img' : 'div'}
+              as={tokenA?.logoURI ? 'img' : 'div'} 
               src={tokenA?.logoURI}
               alt={tokenASymbol}
             />
@@ -78,7 +78,7 @@ export const PoolAvailableLiquidityCard = ({
       <StyledElementForCardLayout kind="content">
         <Button
           onClick={onButtonClick}
-          css={{ fontFamily: 'Trajan', fontSize: '14px' }}
+          css={{ fontFamily: 'Trajan', fontSize: '14px'}}
         >
           {myReserve[1] > 0 ? 'Manage liquidity' : 'Add liquidity'}
         </Button>
@@ -87,17 +87,21 @@ export const PoolAvailableLiquidityCard = ({
   )
 }
 
+
+
+
 const StyledElementForCardLayout = styled('div', {
   variants: {
     kind: {
       wrapper: {
         borderRadius: '20px',
         padding: '17px 35px',
-        border: '1px solid rgba(255, 255, 255, 0.2)',
-        background: '#2e303e',
-        boxShadow:
-          '0px 4px 40px rgb(42 47 50 / 9%),inset 0px 7px 24px rgb(109 109 120 / 20%)',
+        // border: '1px solid rgba(255, 255, 255, 0.2)',
+        // background: '#2e303e',
+        // boxShadow:
+        //   '0px 4px 40px rgb(42 47 50 / 9%),inset 0px 7px 24px rgb(109 109 120 / 20%)',
         backdropFilter: 'blur(40px)',
+        
         '@media (max-width: 1550px)': {
           padding: '10px 28px',
         },
@@ -121,10 +125,10 @@ const Button = styled('div', {
   boxShadow: '0px 10px 30px rgba(42, 47, 50, 0.2)',
   background: 'white',
   color: 'black',
-  padding: '13px 35px',
+  padding: '14px 35px',
   borderRadius: '20px',
   fontSize: '18px',
-  fontWeight: '600',
+  fontWeight: '400',
   textAlign: 'center',
   margin: '0 auto',
 })

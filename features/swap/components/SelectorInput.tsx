@@ -44,7 +44,7 @@ export const SelectorInput = ({
 const StyledInput = styled.input`
   width: auto;
   text-align: right;
-  font-size: 30px;
+  font-size: 25px;
   @media (max-width: 1550px) {
     font-size: 20px;
   }

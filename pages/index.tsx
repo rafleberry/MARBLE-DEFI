@@ -6,9 +6,9 @@ import styled from 'styled-components'
 export default function Home() {
   return (
     <AppLayout fullWidth={true}>
-      <Container>
+      <Container className="dashboard-card">
         <Header>
-          <h1>Dashboard</h1>
+          <h1 className='z-9'>Dashboard</h1>
         </Header>
         <StyledDivForWrapper>
           <Dashboard />
@@ -21,9 +21,10 @@ export default function Home() {
 const Header = styled.div`
   text-align: center;
   h1 {
-    font-size: 45px;
-    font-weight: 700;
+    font-size: 40px;
+    font-weight: 500;
     font-family: Trajan;
+    margin-bottom:40px;
     @media (max-width: 1550px) {
       font-size: 30px;
     }
@@ -38,13 +39,12 @@ const Header = styled.div`
   }
 `
 const Container = styled.div`
-  padding: 20px 0;
-  position: relative;
+  padding: 45px 75px;
   height: 100%;
+  z-index:9;
 `
 const StyledDivForWrapper = styled.div`
   overflow: auto;
-  position: absolute;
   right: 20px;
   left: 20px;
   bottom: 20px;
@@ -62,5 +62,5 @@ const StyledDivForWrapper = styled.div`
   @media (max-width: 1550px) {
     top: 60px;
   }
-  padding: 0 10px;
+  // padding: 0 10px;
 `

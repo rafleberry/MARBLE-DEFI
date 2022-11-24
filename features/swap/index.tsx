@@ -106,6 +106,7 @@ export const TokenSwap = () => {
           disabled={isUiDisabled}
         />
       </SelectorPart>
+      
       <TransactionAction
         isPriceLoading={isPriceLoading}
         tokenToTokenPrice={tokenPrice}
@@ -123,7 +124,7 @@ export const TokenSwap = () => {
 }
 
 const StyledDivForWrapper = styled.div`
-  padding: 20px;
+  // padding: 20px;
   position: relative;
   display: flex;
   flex-direction: column;

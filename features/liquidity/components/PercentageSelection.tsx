@@ -14,7 +14,7 @@ export const PercentageSelection = ({
   const valuesForSteps = [0.1, 0.25, 0.5, 0.75, 1]
   const percentage = liquidity / maxLiquidity
   return (
-    <StyledDivForGrid>
+    <StyledDivForGrid className="dashboard-card">
       {valuesForSteps.map((valueForStep) => {
         return (
           <SecondaryButton
@@ -37,7 +37,12 @@ const StyledDivForGrid = styled.div`
   color: black;
   justify-content: space-around;
   width: 100%;
-  padding: 25px 0;
+  padding: 20px 0;
+  &:before{
+    border-top-left-radius:0;
+    border-top-right-radius:0;
+    border:0 !important;
+  }
   @media (max-width: 1550px) {
     padding: 15px 0;
   }
@@ -50,5 +55,5 @@ const SecondaryButton = styled.button<{ active: boolean }>`
   background: ${({ active }) => (active ? 'white' : '')};
   border-radius: 10px;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 300;
 `

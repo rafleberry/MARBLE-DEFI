@@ -253,7 +253,7 @@ export default function Pool() {
             )}
             {!isLoadingInitial && (
               <Stack spacing="10px">
-                <LiquidityInfoWrapper>
+                <LiquidityInfoWrapper className="dashboard-card">
                   <StyledRowForTokensInfo
                     kind="wrapper"
                     className="pool-wrapper"
@@ -288,7 +288,7 @@ export default function Pool() {
                   <StyledElementForLiquidity kind="wrapper">
                     <StyledElementForLiquidity kind="row">
                       <LHeader>Total Liquidity</LHeader>
-                      <LHeader>APR reward</LHeader>
+                      <LHeader className='apr-text'>APR reward</LHeader>
                     </StyledElementForLiquidity>
                     <StyledElementForLiquidity kind="row">
                       <LValue>
@@ -300,9 +300,9 @@ export default function Pool() {
                 </LiquidityInfoWrapper>
 
                 <Stack>
-                  <ChakraText
-                    fontSize="24px"
-                    fontWeight="600"
+                  <ChakraText className='personal-text'
+                    fontSize="20px"
+                    fontWeight="400"
                     fontFamily="Trajan"
                   >
                     Personal shares
@@ -359,7 +359,7 @@ export default function Pool() {
 
 const Header = styled('div', {
   fontSize: '40px',
-  fontWeight: '700',
+  fontWeight: '500',
   fontFamily: 'Trajan',
   '@media (max-width: 1550px)': {
     fontSize: '30px',
@@ -396,7 +396,7 @@ const StyledRowForTokensInfo = styled('div', {
   display: 'flex',
   alignItems: 'center',
   color: 'white',
-  fontFamily: 'Trajan',
+  fontFamily: 'Mulish',
   variants: {
     kind: {
       wrapper: {
@@ -421,7 +421,7 @@ const StyledTextForTokens = styled('div', {
   gridAutoFlow: 'column',
   alignItems: 'center',
   fontSize: '16px',
-  fontFamily: 'Trajan',
+  fontFamily: 'Mulish',
   variants: {
     kind: {
       element: {
@@ -448,7 +448,7 @@ const StyledElementForLiquidity = styled('div', {
   variants: {
     kind: {
       wrapper: {
-        padding: '10px 36px',
+        padding: '5px 36px 15px',
       },
       row: {
         display: 'flex',
@@ -461,7 +461,7 @@ const StyledElementForLiquidity = styled('div', {
 
 const StyledDivForCards = styled('div', {
   display: 'grid',
-  columnGap: '18px',
+  columnGap: '30px',
   gridTemplateColumns: '1fr 1fr',
 })
 
@@ -484,11 +484,11 @@ const StyledDivForSpinner = styled('div', {
 })
 
 const LiquidityInfoWrapper = styled('div', {
-  border: '1px solid rgba(255, 255, 255, 0.2)',
-  background: '#2e303e',
-  boxShadow:
-    '0px 4px 40px rgb(42 47 50 / 9%),inset 0px 7px 24px rgb(109 109 120 / 20%)',
-  backdropFilter: 'blur(40px)',
+  // border: '1px solid rgba(255, 255, 255, 0.2)',
+  // background: '#2e303e',
+  // boxShadow:
+  //   '0px 4px 40px rgb(42 47 50 / 9%),inset 0px 7px 24px rgb(109 109 120 / 20%)',
+  // backdropFilter: 'blur(40px)',
   borderRadius: '20px',
 })
 

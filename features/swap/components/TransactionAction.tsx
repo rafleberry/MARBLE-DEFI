@@ -97,7 +97,7 @@ export const TransactionAction = ({
     tokenValues[tokenA.tokenAddress] / tokenValues[tokenB.tokenAddress]
   return (
     <StyledDivForWrapper>
-      <StyledDivForInfo>
+      <StyledDivForInfo className="dashboard-card">
         <StyledDivColumnForInfo className="fee-selector" kind="slippage">
           <SlippageSelector
             // @ts-ignore
@@ -126,11 +126,11 @@ export const TransactionAction = ({
             color: 'black',
             stroke: '$black',
             borderRadius: '20px',
-            padding: '15px 30px',
+            padding: '20px 40px',
             boxShadow: '0px 4px 40px rgba(42, 47, 50, 0.09)',
             fontFamily: 'Trajan',
             fontSize: '24px',
-            fontWidth: '700',
+            fontWeight: '600',
           }}
           iconLeft={<IconWrapper icon={<Exchange />} />}
           variant="primary"
@@ -153,20 +153,21 @@ export const TransactionAction = ({
 const StyledDivForWrapper = styled('div', {
   alignItems: 'center',
   padding: '0 0',
-  marginTop: '20px',
+  marginTop: '30px',
+  // zIndex: -1,
 })
 
 const StyledDivForInfo = styled('div', {
   display: 'flex',
   alignItems: 'center',
   borderRadius: '20px',
-  backgroundColor: '#2e303e',
+  // backgroundColor: '#2e303e',
   padding: '15px',
-  boxShadow:
-    '0px 4px 40px rgba(42, 47, 50, 0.09), inset 0px 7px 24px rgba(109, 109, 120,0.2)',
+  // boxShadow:
+  //   '0px 4px 40px rgba(42, 47, 50, 0.09), inset 0px 7px 24px rgba(109, 109, 120,0.2)',
   justifyContent: 'space-between',
   backdropFilter: 'blur(40px)',
-  border: '1px solid rgba(255,255,255,0.2)',
+  // border: '1px solid rgba(255,255,255,0.2)',
 })
 
 const StyledDivColumnForInfo = styled('div', {
@@ -209,8 +210,10 @@ const PrimaryButton = styled(Button, {
   color: 'black',
 })
 const Text = styled('div', {
-  fontSize: '24px',
+  fontSize: '20px',
+  fontWeight:'100',
   fontFamily: 'Trajan',
+  opacity:'0.6',
   '@media (max-width: 1550px)': {
     fontSize: '20px',
   },

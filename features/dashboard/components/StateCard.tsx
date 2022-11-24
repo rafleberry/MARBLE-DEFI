@@ -2,9 +2,9 @@ import styled from 'styled-components'
 
 const StyledCard = ({ icon, color, title, value }) => {
   return (
-    <Container>
-      <IconWrapper color={color}>{icon}</IconWrapper>
-      <div>
+    <Container className="dashboard-card">
+      <IconWrapper className="z-9" color={color}>{icon}</IconWrapper>
+      <div className="z-9">
         {title}
         {value}
       </div>
@@ -16,11 +16,11 @@ const Container = styled.div`
   border-radius: 20px;
   padding: 14px;
   display: flex;
-  backdrop-filter: blur(40px);
-  background-color: #2e303e;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0px 4px 40px rgb(42 47 50 / 9%),
-    inset 0px 7px 24px rgb(109 109 120 / 20%);
+  // backdrop-filter: blur(40px);
+  // background-color: #2e303e;
+  // border: 1px solid rgba(255, 255, 255, 0.2);
+  // box-shadow: 0px 4px 40px rgb(42 47 50 / 9%),
+  //   inset 0px 7px 24px rgb(109 109 120 / 20%);
   @media (max-width: 1550px) {
     padding: 10px;
   }

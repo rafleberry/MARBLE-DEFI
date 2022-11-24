@@ -170,110 +170,116 @@ export const BondLiquidityDialog = ({
             />
           </StyledDivForContent>
           <Divider />
-          <StyledDivForContent>
-            <Text
-              variant="body"
-              css={{
-                padding: '$6 0',
-                fontFamily: 'Trajan',
-                fontSize: '16px',
-                textAlign: 'left',
-              }}
-            >
-              Choose your token amount
-            </Text>
-          </StyledDivForContent>
+         
         </>
       )}
-      <StyledDivForContent kind="form">
-        <LiquidityInputSelector
-          maxLiquidity={maxDollarValueLiquidity}
-          liquidity={liquidityDollarAmount}
-          onChangeLiquidity={(value) => setLiquidityDollarAmount(value)}
-        />
-        <Text
-          variant="caption"
-          color="primary"
-          css={{ padding: '$6 0 $9', fontFamily: 'Trajan', textAlign: 'left' }}
-        >
-          Max available for bonding is worth $
-          {dollarValueFormatterWithDecimals(maxDollarValueLiquidity, {
-            includeCommaSeparation: true,
-          })}
-        </Text>
-        <Divider />
-        <PercentageSelection
-          maxLiquidity={maxDollarValueLiquidity}
-          liquidity={liquidityDollarAmount}
-          onChangeLiquidity={setLiquidityDollarAmount}
-        />
-      </StyledDivForContent>
-      <StyledDivForContent>
-        <BondingSummary
-          label={dialogState === 'bond' ? 'Bonding' : 'Unbonding'}
-          lpTokenAmount={tokenAmount}
-          tokenA={tokenA}
-          tokenB={tokenB}
-          maxLiquidity={maxDollarValueLiquidity}
-          liquidityAmount={liquidityDollarAmount}
-          onChangeLiquidity={setLiquidityDollarAmount}
-        />
-      </StyledDivForContent>
-      <StyledDivForContent>
-        <DialogFooter
-          title={
-            dialogState === 'bond'
-              ? 'Unbonding Period: 14 days'
-              : `Available on: ${dayjs().add(14, 'day').format('MMMM D YYYY')}`
-          }
-          text={
-            dialogState === 'bond'
-              ? "There'll be 14 days from the time you decide to unbond your tokens, to the time you can redeem your previous bond."
-              : `Because of the 14 days unbonding period, you will be able to redeem your $${dollarValueFormatter(
-                  liquidityDollarAmount,
-                  {
-                    includeCommaSeparation: true,
-                  }
-                )} worth of bonded token on ${dayjs()
-                  .add(14, 'day')
-                  .format('MMM D')}.`
-          }
-          buttons={
-            <>
-              <PrimaryButton kind="primary" onClick={onRequestClose}>
-                Cancel
-              </PrimaryButton>
-              <PrimaryButton
-                onClick={handleClick}
-                loading={isLoading}
-                disabled={isLoading || !liquidityDollarAmount}
-                kind="secondary"
+      <div className="Styled-div-content">
+        <StyledDivForContent>
+              <Text
+                variant="body"
+                css={{
+                  padding: '$6 0',
+                  fontFamily: 'Trajan',
+                  fontSize: '16px',
+                  textAlign: 'left',
+                  marginTop:'10px',
+                }}
               >
-                {dialogState === 'bond' ? 'Bond' : 'Unbond'}
-              </PrimaryButton>
-            </>
-          }
-        />
-      </StyledDivForContent>
+                Choose your token amount
+              </Text>
+        </StyledDivForContent>
+        <StyledDivForContent kind="form" className='dashboard-card'>
+          <div className="px-3">
+            <LiquidityInputSelector
+              maxLiquidity={maxDollarValueLiquidity}
+              liquidity={liquidityDollarAmount}
+              onChangeLiquidity={(value) => setLiquidityDollarAmount(value)}
+            />
+            <Text
+              variant="caption"
+              color="primary"
+              css={{ padding: '10px 0px', fontFamily: 'Trajan', textAlign: 'left' }}
+            >
+              Max available for bonding is worth $
+              {dollarValueFormatterWithDecimals(maxDollarValueLiquidity, {
+                includeCommaSeparation: true,
+              })}
+            </Text>
+          </div>
+          <Divider />
+          <PercentageSelection
+            maxLiquidity={maxDollarValueLiquidity}
+            liquidity={liquidityDollarAmount}
+            onChangeLiquidity={setLiquidityDollarAmount}
+          />
+        </StyledDivForContent>
+        <StyledDivForContent>
+          <BondingSummary
+            label={dialogState === 'bond' ? 'Bonding' : 'Unbonding'}
+            lpTokenAmount={tokenAmount}
+            tokenA={tokenA}
+            tokenB={tokenB}
+            maxLiquidity={maxDollarValueLiquidity}
+            liquidityAmount={liquidityDollarAmount}
+            onChangeLiquidity={setLiquidityDollarAmount}
+          />
+        </StyledDivForContent>
+        <StyledDivForContent>
+          <DialogFooter
+            title={
+              dialogState === 'bond'
+                ? 'Unbonding Period: 14 days'
+                : `Available on: ${dayjs().add(14, 'day').format('MMMM D YYYY')}`
+            }
+            text={
+              dialogState === 'bond'
+                ? "There'll be 14 days from the time you decide to unbond your tokens, to the time you can redeem your previous bond."
+                : `Because of the 14 days unbonding period, you will be able to redeem your $${dollarValueFormatter(
+                    liquidityDollarAmount,
+                    {
+                      includeCommaSeparation: true,
+                    }
+                  )} worth of bonded token on ${dayjs()
+                    .add(14, 'day')
+                    .format('MMM D')}.`
+            }
+            buttons={
+              <>
+                <PrimaryButton kind="primary" onClick={onRequestClose}>
+                  Cancel
+                </PrimaryButton>
+                <PrimaryButton
+                  onClick={handleClick}
+                  loading={isLoading}
+                  disabled={isLoading || !liquidityDollarAmount}
+                  kind="secondary"
+                >
+                  {dialogState === 'bond' ? 'Bond' : 'Unbond'}
+                </PrimaryButton>
+              </>
+            }
+          />
+        </StyledDivForContent>
+      </div>
     </Dialog>
   )
 }
 
 const StyledDivForContent = styled('div', {
-  padding: '0px 28px',
+  // padding: '20px 0 0',
   variants: {
     kind: {
       form: {
-        border: '1px solid rgba(255, 255, 255, 0.2)',
-        background: 'rgb(49, 49, 56)',
-        boxShadow:
-          '0px 4px 40px rgb(42 47 50 / 9%), inset 0px 7px 24px rgb(109 109 120 / 20%)',
+        // border: '1px solid rgba(255, 255, 255, 0.2)',
+        // background: 'rgb(49, 49, 56)',
+        // boxShadow:
+        //   '0px 4px 40px rgb(42 47 50 / 9%), inset 0px 7px 24px rgb(109 109 120 / 20%)',
         borderRadius: '20px',
-        padding: '25px 30px 0 30px',
+        // padding: '25px 30px 0 30px',
         '@media (max-width: 1550px)': {
           padding: '25px 20px 0 20px',
         },
-        margin: '0 25px',
+        // margin: '0 25px',
       },
       bondingHeader: {
         paddingBottom: 16,
@@ -293,6 +299,7 @@ const PrimaryButton = styled(Button, {
   width: '140px',
   fontFamily: 'Trajan',
   fontSize: '14px',
+  fontWeight:'500',
   borderRadius: '20px',
   height: '50px',
   variants: {
@@ -301,6 +308,7 @@ const PrimaryButton = styled(Button, {
         border: '1px solid #FFFFFF',
         color: 'white',
         background: 'none',
+        fontWeight:'300',
       },
       secondary: {
         background: 'white',

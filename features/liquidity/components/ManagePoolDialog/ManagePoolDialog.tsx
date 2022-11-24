@@ -197,12 +197,14 @@ export const ManagePoolDialog = ({
                 paddingBottom: '$6',
                 fontFamily: 'Trajan',
                 fontSize: '16px',
+                fontWeight: '300',
+                marginTop:'5px',
               }}
             >
               Choose how much to {isAddingLiquidity ? 'add' : 'remove'}
             </Text>
           </Stack>
-          <AddOrRemoveLiquidityWrapper>
+          <AddOrRemoveLiquidityWrapper className="dashboard-card">
             {isAddingLiquidity && (
               <AddLiquidityContent
                 isLoading={false}
@@ -230,6 +232,7 @@ export const ManagePoolDialog = ({
               />
             )}
           </AddOrRemoveLiquidityWrapper>
+
           <StyledDivForContent>
             <StyledDivForFooter>
               <PrimaryButton onClick={onRequestClose}>Cancel</PrimaryButton>
@@ -251,7 +254,7 @@ export const ManagePoolDialog = ({
         </Stack>
       </Dialog>
     </ChakraProvider>
-  )
+  ) 
 }
 
 function AddLiquidityContent({
@@ -324,8 +327,8 @@ function AddLiquidityContent({
           Max
         </MaxButton>
       </StyledDivForLiquidityInputs> */}
-      <StyledDivForRemoveLiquidityInputs>
-        <StyledDivForAddLiquidityInputsWrapper>
+      <StyledDivForRemoveLiquidityInputs className="dashboard-card">
+        <StyledDivForAddLiquidityInputsWrapper className="dashboard-card">
           <LiquidityInput
             tokenSymbol={tokenASymbol}
             availableAmount={tokenABalance ? tokenABalance : 0}
@@ -493,6 +496,7 @@ const PrimaryButton = styled(Button)`
   height: 50px !important;
   width: 143px !important;
   color: white;
+  font-weight:300 !important;
   font-size: 14px !important;
 `
 const SecondaryButton = styled(Button)`
@@ -536,10 +540,10 @@ const StyledDivForLiquidityInputs = styled.div`
   }
 `
 const StyledDivForRemoveLiquidityInputs = styled.div`
-  background-color: rgb(49, 49, 56);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0px 4px 40px rgb(42 47 50 / 9%),
-    inset 0px 7px 24px rgb(109 109 120 / 20%);
+  // background-color: rgb(49, 49, 56);
+  // border: 1px solid rgba(255, 255, 255, 0.2);
+  // box-shadow: 0px 4px 40px rgb(42 47 50 / 9%),
+  //   inset 0px 7px 24px rgb(109 109 120 / 20%);
   border-radius: 20px;
   width: 100%;
 `
@@ -555,6 +559,10 @@ const StyledDivForAddLiquidityInputsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 16px;
+  &:before{
+    border-bottom-left-radius:0 !important;
+    border: 0 !important;
+  }
   @media (max-width: 1550px) {
     padding: 25px 20px 25px 25px;
   }

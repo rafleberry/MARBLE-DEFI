@@ -8,7 +8,7 @@ const Swap = () => {
   const [fullWidth, setFullWidth] = React.useState(true)
   return (
     <AppLayout fullWidth={fullWidth}>
-      <Container>
+      <Container >
         <Header>
           <h1>Swap</h1>
           <p>Swap between your favorite assets on Marble</p>
@@ -22,7 +22,7 @@ const Swap = () => {
 }
 export default Swap
 const Container = styled.div`
-  padding: 20px 60px 0px 60px;
+  padding: 50px 60px 0px 60px;
   // height: 100%;
   @media (max-width: 1550px) {
     padding: 20px 40px 0px 40px;
@@ -32,14 +32,17 @@ const Header = styled.div`
   text-align: center;
   margin-bottom: 40px;
   h1 {
-    font-size: 45px;
-    font-weight: 700;
+    font-size: 40px;
+    font-weight: 500;
     font-family: Trajan;
+    margin-bottom: 22px;
   }
   p {
-    font-size: 24px;
-    font-weight: 400;
+    font-size: 20px;
     font-family: Trajan;
+    opacity: 0.8;
+    font-weight: 300;
+    // margin-bottom:55px;
     @media (max-width: 1550px) {
       font-size: 14px;
     }
@@ -50,11 +53,8 @@ const Header = styled.div`
 `
 const StyledDivForWrapper = styled.div`
   overflow: auto;
-  position: absolute;
-  right: 20px;
-  left: 20px;
-  bottom: 20px;
-  top: 130px;
+  min-height:600px;
+  height:100%;
   ::-webkit-scrollbar {
     width: 6px;
   }

@@ -280,6 +280,11 @@ div{
 }
 .btn-swap{
   margin: 2rem auto 0 auto;
+  svg{
+    width: 30px;
+    height: 30px;
+    // padding-right: 10px;
+  }
 }
 .link-feedback{
   text-decoration: underline;
@@ -735,6 +740,7 @@ div{
     }
     .pool-list{
       grid-template-columns: 1fr;
+  
     }
     .claim-block{
       flex-direction: column;
@@ -980,5 +986,102 @@ div{
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start,
+  }
+}
+
+.dashboard-card {
+  position: relative;
+  z-index: 9 !important;
+
+  &::before {
+      content: "";
+      box-shadow: 0px 4px 40px rgb(42 47 50 / 9%), inset -2px -1px 24px #41414e;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      inset: 0;
+      border-radius: 20px;
+      padding: 1px;
+      background:linear-gradient(0deg, #191c2b, #272938) padding-box, linear-gradient(90.65deg, #6c6c6c 0.82%, rgba(0, 0, 0, 0) 65.47%) border-box !important;
+      opacity:0.6;
+      border: 1px solid;
+      border-image-source: linear-gradient(
+        90.65deg,
+        #ffffff 0.82%,
+        rgba(0, 0, 0, 0) 98.47%
+    );
+  }
+}
+
+.z-9{
+  z-index:9;
+}
+.pt-5{
+  padding-top: 30px;
+}
+.style-wrapper{
+  align-items: flex-start !important;
+  display: flex ;
+  height: 100vh;
+}
+.btn-wrapper{
+  font-family:'Trajan' !important;
+  font-weight:500 !important;
+  padding:16px 60px !important;
+  border-radius:20px !important;
+  box-shadow:0px 4px 40px rgba(42, 47, 50, 0.09), inset 0px 7px 8px rgba(0, 0, 0, 0.2);
+  margin-top:30px;
+}
+.pool-list{
+  max-height:540px;
+  height: 100%;
+}
+.apr-text{
+  font-size:16px !important;
+}
+.personal-text{
+  margin: 25px 0 10px;
+}
+.f400{
+  font-weight: 400 !important;
+}
+.text-caption{
+  font-family: 'Mulish' !important;
+}
+.z-index{
+  z-index: 99 !important;
+}
+.Styled-div-content{
+  padding: 0px 36px 20px; 
+}
+.px-3{
+  padding:25px 25px 20px 25px;
+}
+.z-unset{
+  z-index: unset !important;
+}
+.bonding-child-div{
+  &:before {
+    border-radius: 13px !important;
+    padding:23px 20px;
+  }
+  p{
+    padding: 17px;
+    min-width: 137px;
+  }
+}
+.option-card {
+  // background-color: #262837 !important;
+  // border-radius: 0px !important
+  // ;
+  &:before{
+    border: 0px !important;
+    border-radius: 0px !important;
+  }
+  &:last-child{
+    border-bottom-left-radius: 21px !important;
   }
 }

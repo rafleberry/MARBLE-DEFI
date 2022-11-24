@@ -50,13 +50,14 @@ export function NavigationSidebar() {
     borderRadius: '50%',
     background:
       'linear-gradient(180deg, rgba(255, 255, 255, 0.43) 0%, rgba(255, 255, 255, 0.38) 100%)',
+      // color:'#fff',
     border: '2px solid transparent',
     width: linkWidth,
     height: linkWidth,
   }
   return (
     <ChakraProvider>
-      <StyledWrapper>
+      <StyledWrapper className="dashboard-card">
         <StyledMenuContainer className="wrap-menu container">
           <Link href="/" passHref>
             <StyledDivForLogo as="a">
@@ -169,18 +170,20 @@ export function NavigationSidebar() {
 }
 
 const StyledWrapper = styled.div`
-  width: 20%;
-  height: calc(100vh - 180px);
-  background: rgba(255, 252, 252, 0.06);
-  border-radius: 50px;
-  backdrop-filter: blur(20px);
-  padding: 40px 40px;
-  position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 25%;
+  // min-height: calc(100vh - 60px);
+  height:100%;
+  padding:40px 60px;
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 20px;
+  position:relative;
   @media (max-width: 1550px) {
     height: calc(100vh - 80px);
     padding: 40px 30px;
     width: 25%;
+  }
+  svg {
+    color:#fff !important;
   }
 `
 const MenuFooter = styled.div`
@@ -225,4 +228,5 @@ const IconWrapper = styled.div<{ isActive: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right:10px;
 `

@@ -47,7 +47,7 @@ export const TransactionTips = ({
 const StyledDivForWrapper = styled.div`
   text-align: -webkit-center;
   z-index: 100;
-  height: 20px;
+  height: 25px;
   display: flex;
   justify-content: center;
   align-items: center;

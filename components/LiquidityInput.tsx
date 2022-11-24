@@ -27,14 +27,14 @@ export const LiquidityInput: FC<LiquidityInputProps> = ({
   const handleAmountChange = (value: number) => onAmountChange(value)
 
   return (
-    <StyledDivForWrapper active={focusedOnInput}>
+    <StyledDivForWrapper active={focusedOnInput} className="dashboard-card">
       <StyledDivForColumn kind="info">
         <StyledImageForToken src={logoURI} as={logoURI ? 'img' : 'div'} />
         <div>
-          <Text variant="title" transform="uppercase">
+          <Text variant="title" transform="uppercase" className="f400">
             {tokenName}
           </Text>
-          <Text variant="caption" color="tertiary">
+          <Text variant="caption" className="f400 text-caption">
             {formatTokenBalance(availableAmount)} available
           </Text>
         </div>
@@ -61,19 +61,19 @@ const StyledDivForWrapper = styled('div', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  backgroundColor: 'rgb(49,49,56)',
-  border: '1px solid rgba(255, 255, 255, 0.2)',
+  // backgroundColor: 'rgb(49,49,56)',
+  // border: '1px solid rgba(255, 255, 255, 0.2)',
   borderRadius: '20px',
   padding: '12px 24px 10px 10px',
   width: '100%',
-  boxShadow:
-    '0px 4px 40px rgb(42 47 50 / 9%),inset 0px 7px 24px rgb(109 109 120 / 20%)',
+  // boxShadow:
+  //   '0px 4px 40px rgb(42 47 50 / 9%),inset 0px 7px 24px rgb(109 109 120 / 20%)',
   transition: 'background 0.1s ease-out',
   '&:hover': {
     backgroundColor: 'rgba(25, 29, 32, 0.15)',
   },
   '&:active': {
-    backgroundColor: 'rgba(25, 29, 32, 0.05)',
+    // backgroundColor: 'rgba(25, 29, 32, 0.05)',
   },
   variants: {
     active: {

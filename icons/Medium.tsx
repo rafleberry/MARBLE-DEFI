@@ -3,7 +3,7 @@ import { SVGProps } from 'react'
 export const Medium = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
-      fill="#000000"
+      fill="#fff"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 50 50"
       width="16px"

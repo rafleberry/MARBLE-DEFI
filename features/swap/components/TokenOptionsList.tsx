@@ -14,7 +14,6 @@ export const TokenOptionsList = ({
   const tokens = isDeposit
     ? [tokenList?.native_token, tokenList.wrap_token]
     : tokenList?.tokens
-
   return (
     <>
       {tokens.length > 0 &&
@@ -27,6 +26,7 @@ export const TokenOptionsList = ({
               onClick={() => {
                 onSelect(tokenInfo.symbol, tokenInfo.token_address)
               }}
+              className="option-card"
             >
               <StyledDivForColumn kind="token">
                 <StyledImgForTokenLogo
@@ -73,13 +73,14 @@ const StyledDivForRow = styled('div', {
   userSelect: 'none',
   cursor: 'pointer',
   transition: 'background-color 0.1s ease-out',
-  marginBottom: 5,
-  '&:hover': {
-    backgroundColor: 'gray',
-  },
-  '&:active': {
-    backgroundColor: '$colors$dark05',
-  },
+  marginBottom: 0,
+  zIndex:999,
+  // '&:hover': {
+  //   backgroundColor: 'gray',
+  // },
+  // '&:active': {
+  //   backgroundColor: '$colors$dark05',
+  // },
   '&:last-child': {
     marginBottom: 0,
   },

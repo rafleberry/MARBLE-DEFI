@@ -164,40 +164,53 @@ export const Dashboard = () => {
           value={<CValue>260.41%</CValue>}
         />
       </StyldedGrid>
-      <Value style={{ fontFamily: 'Trajan' }}>Protocol Stats</Value>
-      <StateContent>
-        <StateElement>
-          <Title>Liquidity Pools</Title>
-          <Value>${getTVL()}</Value>
-        </StateElement>
-        <StateElement>
-          <Title>Bonded Liquidity</Title>
-          <Value>$61,971.74</Value>
-        </StateElement>
-        <StateElement>
-          <Title>Staked Marble</Title>
-          <Value>$61,971.74</Value>
-        </StateElement>
-        <StateElement>
-          <Title>Treasury</Title>
-          <Value>$61,971.74</Value>
-        </StateElement>
-      </StateContent>
-      {farms && (
-        <DepositCardWrapper>
-          <DepositCard param={farms[1]} />
-          <DepositCard param={farms[2]} />
-        </DepositCardWrapper>
-      )}
+      <div className="pt-5">
+        <Value style={{ fontFamily: 'Trajan' }}>Protocol Stats</Value>
+        <StateContent className="dashboard-card">
+          <StateElement className="z-9">
+            <Title>Liquidity Pools</Title>
+            <CValue>${getTVL()}</CValue>
+          </StateElement>
+          <StateElement className="z-9">
+            <Title>Bonded Liquidity</Title>
+            <CValue>$61,971.74</CValue>
+          </StateElement>
+          <StateElement className="z-9">
+            <Title>Staked Marble</Title>
+            <CValue>$61,971.74</CValue>
+          </StateElement>
+          <StateElement className="z-9">
+            <Title>Treasury</Title>
+            <CValue>$61,971.74</CValue>
+          </StateElement>
+        </StateContent>
+        {farms && (
+          <DepositCardWrapper className="pt-5">
+            <DepositCard param={farms[1]} />
+            <DepositCard param={farms[2]} />
+          </DepositCardWrapper>
+        )}
+      </div>
     </StyledDivForWrapper>
   )
 }
 
 const StyledDivForWrapper = styled.div`
-  padding: 0 0px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
+padding: 20px 10px;
+position: relative;
+row-gap: 30px;
+overflow: auto;
+max-height: 600px;
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
   row-gap: 30px;
   @media (max-width: 1550px) {
     padding: 20px 20px;
@@ -207,7 +220,7 @@ const StyledDivForWrapper = styled.div`
 const StyldedGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-column-gap: 30px;
+  grid-column-gap: 25px;
   @media (max-width: 1550px) {
     grid-column-gap: 15px;
   }
@@ -215,7 +228,7 @@ const StyldedGrid = styled.div`
 const Title = styled.div`
   font-size: 16px;
   color: #a1a1a1;
-  font-weight: 500;
+  font-weight: 400;
   font-family: Trajan;
   @media (max-width: 1550px) {
     font-size: 14px;
@@ -223,9 +236,10 @@ const Title = styled.div`
 `
 
 const Value = styled.div`
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 400;
   color: white;
+  margin-bottom:15px;
   @media (max-width: 1550px) {
     font-size: 16px;
   }
@@ -233,7 +247,7 @@ const Value = styled.div`
 const CTitle = styled.div`
   font-size: 15px;
   color: #a1a1a1;
-  font-weight: 500;
+  font-weight: 400;
   font-family: Trajan;
   @media (max-width: 1550px) {
     font-size: 12px;
@@ -242,8 +256,9 @@ const CTitle = styled.div`
 
 const CValue = styled.div`
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
   color: white;
+  margin-top:5px;
   @media (max-width: 1550px) {
     font-size: 14px;
   }
@@ -252,11 +267,11 @@ const StateContent = styled.div`
   padding: 20px;
   border-radius: 20px;
   display: flex;
-  backdrop-filter: blur(40px);
-  background-color: #2e303e;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0px 4px 40px rgb(42 47 50 / 9%),
-    inset 0px 7px 24px rgb(109 109 120 / 20%);
+  // backdrop-filter: blur(40px);
+  // background-color: #2e303e;
+  // border: 1px solid rgba(255, 255, 255, 0.2);
+  // box-shadow: 0px 4px 40px rgb(42 47 50 / 9%),
+  //   inset 0px 7px 24px rgb(109 109 120 / 20%);
   justify-content: space-around;
   @media (max-width: 1550px) {
     padding: 12px;

@@ -34,7 +34,7 @@ const StyledButton = styled(Button, {
   columnGap: 8,
   display: 'flex',
   alignItems: 'center',
-  width: '140px',
+  width: '120px',
   variants: {
     active: {
       true: {

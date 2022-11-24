@@ -69,7 +69,7 @@ export const PoolInfo: React.FC<PoolInfoProps> = ({
     onClaim()
   }
   return (
-    <StyledElementForCard kind="wrapper">
+    <StyledElementForCard kind="wrapper" className="dashboard-card">
       <StyledElementForToken>
         <Title>Dust Price</Title>
         <Value>${dustPrice.toFixed(2)}</Value>
@@ -143,11 +143,11 @@ const StyledElementForCard = styled('div', {
         alignItems: 'center',
         position: 'relative',
         overflow: 'hidden',
-        border: '1px solid rgba(255, 255, 255, 0.2)',
-        background: '#2e303e',
-        boxShadow:
-          '0px 4px 40px rgb(42 47 50 / 9%),inset 0px 7px 24px rgb(109 109 120 / 20%)',
-        backdropFilter: 'blur(40px)',
+        // border: '1px solid rgba(255, 255, 255, 0.2)',
+        // background: '#2e303e',
+        // boxShadow:
+        //   '0px 4px 40px rgb(42 47 50 / 9%),inset 0px 7px 24px rgb(109 109 120 / 20%)',
+        // backdropFilter: 'blur(40px)',
         '@media (max-width: 1550px)': {
           padding: '10px 40px',
         },

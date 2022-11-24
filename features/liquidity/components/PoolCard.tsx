@@ -56,16 +56,17 @@ export const PoolCard = ({
 }: PoolCardProps) => {
   return (
     <Link href={`/pools/${poolId}`} passHref>
-      <StyledLinkForCard>
+      <StyledLinkForCard className="dashboard-card">
         <>
           <StyledDivForRowWrapper>
             <StyledDivForHeaderContainer>
               <StyledDivForTokenLogos>
+              
                 <StyledImageForTokenLogo
                   src={tokenA?.logoURI}
                   as={tokenA?.logoURI ? 'img' : 'div'}
                 />
-                <StyledImageForTokenLogo
+                  <StyledImageForTokenLogo
                   src={tokenB?.logoURI}
                   as={tokenB?.logoURI ? 'img' : 'div'}
                 />
@@ -126,7 +127,7 @@ export const PoolCard = ({
 
 export const PoolCardFetching = ({ hasLiquidityProvided = true }) => {
   return (
-    <StyledLinkForCard
+    <StyledLinkForCard className="dashboard-card"
       as="div"
       variant={hasLiquidityProvided ? 'fetching--active' : 'fetching'}
     >
@@ -150,13 +151,13 @@ const StyledLinkForCard = styled('a', {
   borderRadius: '$radii$4',
   position: 'relative',
   transition: 'background-color 0.1s ease-out',
-  border: '1px solid rgba(255, 255, 255, 0.2)',
-  background: '#2e303e',
-  boxShadow:
-    '0px 4px 40px rgb(42 47 50 / 9%),inset 0px 7px 24px rgb(109 109 120 / 20%)',
-  '&:active': {
-    backgroundColor: '$colors$dark5',
-  },
+  // border: '1px solid rgba(255, 255, 255, 0.2)',
+  // background: '#2e303e',
+  // boxShadow:
+  //   '0px 4px 40px rgb(42 47 50 / 9%),inset 0px 7px 24px rgb(109 109 120 / 20%)',
+  // '&:active': {
+  //   backgroundColor: '$colors$dark5',
+  // },
   variants: {
     variant: {
       fetching: {
@@ -184,7 +185,7 @@ const StyledImageForTokenLogo = styled('img', {
   position: 'relative',
   zIndex: 1,
   '&:first-child': {
-    boxShadow: '0 0 0 $space$1 #E8E8E9',
+    boxShadow: '0 0 0 0 #E8E8E9',
     zIndex: 0,
   },
   '&:last-child': {
@@ -224,6 +225,8 @@ const StyledDivForRowWrapper = styled('div', {
 const StyledDivForHeaderContainer = styled('div', {
   display: 'flex',
   alignItems: 'center',
+  padding: '15px 0px 15px 0px',
+
 })
 
 const StyledDivForRow = styled('div', {

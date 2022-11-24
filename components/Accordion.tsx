@@ -60,8 +60,8 @@ export const MenuEntry = styled.div<{ isActive: boolean }>`
   align-items: center;
   height: ${MENU_ENTRY_HEIGHT}px;
   width: 100%;
-  font-size: 16px;
-  font-weight: ${({ isActive }) => (isActive ? '700' : '400')};
+  font-size: 14px;
+  font-weight: ${({ isActive }) => (isActive ? '500' : '300')};
   position: relative;
   font-family: Trajan;
   @media (max-width: 1550px) {
@@ -75,8 +75,8 @@ export const SubMenuEntry = styled.div<{ isActive: boolean }>`
   align-items: center;
   height: ${MENU_ENTRY_HEIGHT}px;
   width: 100%;
-  font-size: 16px;
-  font-weight: ${({ isActive }) => (isActive ? '700' : '400')};
+  font-size: 14px;
+  font-weight: ${({ isActive }) => (isActive ? '500' : '300')};
   position: relative;
   font-family: Trajan;
   @media (max-width: 1550px) {

@@ -237,12 +237,13 @@ export default function Pools() {
 }
 
 const Container = styled.div`
-  padding: 20px 60px 0px 60px;
-  height: 100%;
+  padding:45px 75px;
+  // height: 100%;
   position: relative;
-  @media (max-width: 1550px) {
-    padding: 20px 20px 0px 20px;
-  }
+  // min-height:calc(100vh - 60px);
+  // @media (max-width: 1550px) {
+  //   padding: 20px 20px 0px 20px;
+  // }
 `
 const Divider = styled.div`
   height: 1px;
@@ -251,21 +252,25 @@ const Divider = styled.div`
 `
 const Header = styled.div`
   text-align: center;
+  margin-bottom:30px;
   h1 {
     font-size: 40px;
-    font-weight: 700;
+    font-weight: 500;
     font-family: Trajan;
+    margin-bottom: 14px;
+
   }
   p {
     font-size: 20px;
     font-family: Trajan;
     opacity: 0.8;
+    font-weight:300;
   }
   @media (max-width: 1550px) {
     h1 {
       font-size: 30px;
       font-weight: 300;
-      font-weight: 700;
+      font-weight: 600;
     }
     p {
       font-size: 15px;
@@ -311,12 +316,11 @@ const SectionTitle = ({ variant = 'my', children }) => {
 }
 const StyledDivForWrapper = styled.div`
   overflow: auto;
-  margin-top: 20px;
-  position: absolute;
-  right: 20px;
-  left: 20px;
-  bottom: 20px;
-  top: 120px;
+  margin-top: 30px;
+  padding: 0 10px;
+  max-height: calc(100vh - 443px);
+  height: 100%;
+  
   ::-webkit-scrollbar {
     width: 6px;
   }
@@ -327,5 +331,4 @@ const StyledDivForWrapper = styled.div`
   ::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.1);
   }
-  padding: 0 10px;
 `

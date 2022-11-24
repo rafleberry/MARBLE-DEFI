@@ -59,7 +59,7 @@ export const TokenSelector = ({
   }
 
   return (
-    <StyledDivForContainer
+    <StyledDivForContainer className="dashboard-card z-unset"
       ref={wrapperRef}
       isFirst={!readOnly}
       isOpened={isTokenListShowing}
@@ -140,7 +140,7 @@ export const TokenSelector = ({
 }
 
 const StyledDivForWrapper = styled.div`
-  padding: 10px 30px 10px 14px;
+  padding: 10px 20px 20px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -154,12 +154,13 @@ const ColumnFlex = styled.div`
   flex-direction: column;
   text-align: -webkit-right;
   justify-content: space-between;
-  row-gap: 20px;
+  row-gap: 15px;
 `
 
 const Text = styled.div`
-  font-size: 22px;
+  font-size: 14px;
   color: white;
+  font-weight:100;
   opacity: 0.6;
   font-family: Trajan;
   @media (max-width: 1550px) {
@@ -181,9 +182,40 @@ const StyledDivForAmountWrapper = styled.div`
 `
 
 const StyledDivForTokensListWrapper = styled.div`
-  padding: 2px 12px 24px;
+  padding: 2px 1px 7px;
   overflow: auto;
   max-height: 300px;
+  position: relative;
+  z-index: 999;
+  background: linear-gradient(0deg, #191c2b, #272938) padding-box, linear-gradient(90.65deg, #505157 0.82%, rgba(0, 0, 0, 0) 65.47%) border-box !important;
+  border: 1px solid;
+  border-image-source: linear-gradient(90.65deg, #ffffff 0.82%, rgba(0, 0, 0, 0) 98.47%) !important;
+  border-top: 0px;
+  border-radius:20px;
+  border-top-left-radius:0px;
+  border-top-right-radius:0px;
+  margin-top:-9px;
+
+  // &::before {
+  //   content: "";
+  //   box-shadow: 0px 4px 40px rgb(42 47 50 / 9%), inset -2px -1px 24px #41414e;
+  //   width: 100%;
+  //   height: 100%;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   z-index: -1;
+  //   inset: 0;
+  //   // border-radius: 20px;
+  //   padding: 1px;
+  //   background:linear-gradient(0deg, #191c2b, #272938) padding-box, linear-gradient(90.65deg, #6c6c6c 0.82%, rgba(0, 0, 0, 0) 65.47%) border-box !important;
+  //   // opacity:0.6;
+  //   // border: 1px solid;
+  //   // border-image-source: linear-gradient(
+  //   //   90.65deg,
+  //   //   #ffffff 0.82%,
+  //   //   rgba(0, 0, 0, 0) 98.47%
+  // );
   ::-webkit-scrollbar {
     width: 0px;
   }
@@ -215,12 +247,12 @@ const StyledDivForContainer = styled.div<{
   isOpened: boolean
 }>`
   border-radius: 20px;
-  padding: 0 20px;
-  background-color: #2e303e;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0px 4px 40px rgba(42, 47, 50, 0.09),
-    inset 0px 7px 24px rgba(109, 109, 120, 0.2);
-  backdrop-filter: blur(400px);
+  // padding: 0 20px;
+  // background-color: #2e303e;
+  // border: 1px solid rgba(255, 255, 255, 0.2);
+  // box-shadow: 0px 4px 40px rgba(42, 47, 50, 0.09),
+  //   inset 0px 7px 24px rgba(109, 109, 120, 0.2);
+  // backdrop-filter: blur(400px);
   color: white;
   position: relative;
   z-index: ${({ isFirst, isOpened }) =>

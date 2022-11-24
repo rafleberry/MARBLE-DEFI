@@ -41,7 +41,7 @@ export const LiquidityInputSelector = ({
   })
 
   return (
-    <StyledDivForSelector {...(bind as any)}>
+    <StyledDivForSelector {...(bind as any)} className="dashboard-card">
       <StyledTextForInputWithSymbol ref={refForInputWrapper} variant="body">
         <input
           ref={inputRef}
@@ -113,8 +113,8 @@ const useDrag = ({ getIsException, onProgressUpdate }) => {
 
 const StyledDivForSelector = styled('div', {
   cursor: 'col-resize',
-  background: 'rgb(49, 49, 56)',
-  border: '1px solid rgba(255, 255, 255, 0.2)',
+  // background: 'rgb(49, 49, 56)',
+  // border: '1px solid rgba(255, 255, 255, 0.2)',
   borderRadius: '20px',
   overflow: 'hidden',
   position: 'relative',
@@ -122,8 +122,9 @@ const StyledDivForSelector = styled('div', {
   alignItems: 'center',
   width: '100%',
   padding: '20px 20px',
-  boxShadow:
-    '0px 4px 40px rgb(42 47 50 / 9%),inset 0px 7px 24px rgb(109 109 120 / 20%)',
+  // margin:'0 20px 3px',
+  // boxShadow:
+  //   '0px 4px 40px rgb(42 47 50 / 9%),inset 0px 7px 24px rgb(109 109 120 / 20%)',
 })
 
 const StyledTextForInputWithSymbol: any = styled(Text, {

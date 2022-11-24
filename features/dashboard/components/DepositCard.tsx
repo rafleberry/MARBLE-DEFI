@@ -46,7 +46,7 @@ const DepositCard = ({ param }) => {
     })()
   }, [param])
   return (
-    <Container>
+    <Container className="dashboard-card">
       <Header>
         <IconWrapper>
           <Img src={token.icon} alt="token" />
@@ -64,7 +64,7 @@ const DepositCard = ({ param }) => {
       </ValueCard>
       <ButtonWrapper>
         <Link href="/swap">
-          <StyledButton className="btn-default" variant="primary">
+          <StyledButton className="btn-default btn-wrapper" variant="primary">
             {' '}
             Buy
           </StyledButton>
@@ -76,15 +76,15 @@ const DepositCard = ({ param }) => {
 
 const Container = styled.div`
   border-radius: 20px;
-  background-color: #2e303e;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0px 4px 40px rgb(42 47 50 / 9%),
+  // background-color: #2e303e;
+  // border: 1px solid rgba(255, 255, 255, 0.2);
+  // box-shadow: 0px 4px 40px rgb(42 47 50 / 9%),
     inset 0px 7px 24px rgb(109 109 120 / 20%);
   padding: 30px;
   display: flex;
   flex-direction: column;
   row-gap: 15px;
-  backdrop-filter: blur(40px);
+  // backdrop-filter: blur(40px);
   width: 100%;
   @media (max-width: 1550px) {
     padding: 20px;
@@ -96,7 +96,8 @@ const IconWrapper = styled.div`
   font-size: 24px;
   align-items: center;
   font-family: Trajan;
-  font-weight: 600;
+  font-weight: 500;
+  margin-bottom:20px;
   @media (max-width: 1550px) {
     font-size: 16px;
   }
@@ -114,7 +115,7 @@ const Header = styled.div`
   font-weight: 700;
   display: flex;
   width: 100%;
-  align-items: center;
+  // align-items: center;
   justify-content: space-between;
   @media (max-width: 1550px) {
     font-size: 18px;
@@ -123,7 +124,7 @@ const Header = styled.div`
 const ValueCard = styled.div`
   width: 100%;
   border-radius: 18px;
-  background: rgba(236, 246, 255, 0.0858);
+  background: rgb(255 255 255 / 9%);
   height: 76px;
   padding: 20px 30px;
   display: flex;
@@ -162,6 +163,9 @@ const StyledButton = styled(Button)`
   border-radius: 20px;
   padding: 10px 30px;
   box-shadow: 0px 4px 40px rgba(42, 47, 50, 0.09);
+  margin-top:15px;
+  // font-weight:500;
+  // font-family:'Trajan;
 `
 
 export default DepositCard
